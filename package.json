@@ -1,7 +1,7 @@
 {
-  "name": "@pouyan-web/player",
-  "version": "0.1.253",
-  "description": "Easily play any type of video by customizing the appearance",
+  "name": "to-persian-letter-currency",
+  "version": "0.0.1",
+  "description": "Easily convert numbers to persian currency (toman & rial)",
   "scripts": {
     "prepare": "husky install",
     "build": "rollup -c",
@@ -15,7 +15,7 @@
     "release:alpha": "npm run release -- --prerelease alpha",
     "release:publish": "npm run build && npm run release && npm publish"
   },
-  "author": "@pouyan-web",
+  "author": "@solgiDeveloper",
   "license": "ISC",
   "publishConfig": {
     "access": "public"

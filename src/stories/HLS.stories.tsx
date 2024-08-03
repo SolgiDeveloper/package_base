@@ -1,14 +1,13 @@
 import { Meta, Story } from "@storybook/react";
+import { toPersianLetterCurrency } from "../utils/helpers";
 
 type DemoProps = {
   length: number;
 };
 
-const Demo = ({ length }: DemoProps) => {
-  return (
-    <p>hello</p>
-  );
-};
+const Demo = ({ length }: DemoProps) => (
+  <p>{toPersianLetterCurrency(20000005)}</p>
+);
 
 const meta: Meta = {
   title: "base",
