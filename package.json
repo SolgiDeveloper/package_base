@@ -1,6 +1,6 @@
 {
   "name": "to-persian-letter-currency",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Easily convert numbers to persian currency (toman & rial)",
   "scripts": {
     "prepare": "husky install",
@@ -89,7 +89,6 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-
   "keywords": [
     "persian numbers",
     "persian letter"
