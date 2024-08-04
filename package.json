@@ -89,13 +89,10 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "dependencies": {
-    "hls.js": "^1.3.2"
-  },
+
   "keywords": [
-    "hls",
-    "reactPlayer",
-    "ReactHlsPlayer"
+    "persian numbers",
+    "persian letter"
   ],
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [

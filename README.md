@@ -53,7 +53,7 @@ returns: string - The equivalent Persian letter currency.
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/SolgiDeveloper/package_base/tree/toPersianLetterCurrency).
 
 ## Author
 
