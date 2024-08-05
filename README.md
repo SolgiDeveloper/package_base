@@ -1,4 +1,4 @@
-# [to persian letter currency](https://reactjs.org/)
+# [to persian letter currency](https://github.com/SolgiDeveloper/package_base/tree/toPersianLetterCurrency)
 
 **to-persian-letter-currency** is an npm package that converts numeric currency values to their equivalent Persian text. It simplifies the process of displaying Persian letter currency in applications, ensuring proper localization and readability.
 
