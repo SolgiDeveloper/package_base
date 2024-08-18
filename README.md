@@ -29,12 +29,14 @@ yarn add to-persian-letter-currency
 
 Here is a basic example of how to use the package:
 ```tsx
-import { toPersianLetterCurrency } from 'to-persian-letter-currency';
+import { toPersianAlphabetic } from 'to-persian-letter-currency';
 
 const number = 123456;
-const persianCurrency = toPersianLetterCurrency(number);
+const persianCurrency = toPersianAlphabetic(number);
 
-console.log(persianCurrency); // Outputs: دوازده هزار و سیصد و چهل و پنج تومان و شش ریال
+console.log(persianCurrency); // Output: دوازده هزار و سیصد و چهل و پنج تومان و شش ریال
+
+console.log(toPersianNumberic(234568999999)); // Output:  234 میلیارد و 568 میلیون و 999 هزار و 999 تومان و 9 ریال
 
 ```
 
@@ -42,7 +44,7 @@ console.log(persianCurrency); // Outputs: دوازده هزار و سیصد و �
 
 ###
 
-**toPersianLetterCurrency(number)**
+**toPersianAlphabetic(number)**
 
 number: number - The numeric value to be converted to Persian letter currency.
 
