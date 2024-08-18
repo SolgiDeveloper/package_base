@@ -1,106 +1,60 @@
 /* eslint-disable radix */
-export function toPersianLetterCurrency(
-  number: number,
-  mode?: "alphabet" | "number",
-) {
+export function toPersianAlphabetic(number: number) {
   let Delimiter = " و ";
   let Zero = "صفر";
-  let Letters =
-    mode === "number"
-      ? [
-          ["", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-          ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
-          ["", "", "20", "30", "40", "50", "60", "70", "80", "90"],
-          ["", "100", "200", "300", "400", "500", "600", "700", "800", "900"],
-          [
-            "",
-            " 1000",
-            " میلیون",
-            " میلیارد",
-            " بیلیون",
-            " بیلیارد",
-            " تریلیون",
-            " تریلیارد",
-            "کوآدریلیون",
-            " کادریلیارد",
-            " کوینتیلیون",
-            " کوانتینیارد",
-            " سکستیلیون",
-            " سکستیلیارد",
-            " سپتیلیون",
-            "سپتیلیارد",
-            " اکتیلیون",
-            " اکتیلیارد",
-            " نانیلیون",
-            " نانیلیارد",
-            " دسیلیون",
-            " دسیلیارد",
-          ],
-        ]
-      : [
-          ["", "یک", "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه"],
-          [
-            "ده",
-            "یازده",
-            "دوازده",
-            "سیزده",
-            "چهارده",
-            "پانزده",
-            "شانزده",
-            "هفده",
-            "هجده",
-            "نوزده",
-            "بیست",
-          ],
-          [
-            "",
-            "",
-            "بیست",
-            "سی",
-            "چهل",
-            "پنجاه",
-            "شصت",
-            "هفتاد",
-            "هشتاد",
-            "نود",
-          ],
-          [
-            "",
-            "یکصد",
-            "دویست",
-            "سیصد",
-            "چهارصد",
-            "پانصد",
-            "ششصد",
-            "هفتصد",
-            "هشتصد",
-            "نهصد",
-          ],
-          [
-            "",
-            " هزار",
-            " میلیون",
-            " میلیارد",
-            " بیلیون",
-            " بیلیارد",
-            " تریلیون",
-            " تریلیارد",
-            "کوآدریلیون",
-            " کادریلیارد",
-            " کوینتیلیون",
-            " کوانتینیارد",
-            " سکستیلیون",
-            " سکستیلیارد",
-            " سپتیلیون",
-            "سپتیلیارد",
-            " اکتیلیون",
-            " اکتیلیارد",
-            " نانیلیون",
-            " نانیلیارد",
-            " دسیلیون",
-            " دسیلیارد",
-          ],
-        ];
+  let Letters = [
+    ["", "یک", "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه"],
+    [
+      "ده",
+      "یازده",
+      "دوازده",
+      "سیزده",
+      "چهارده",
+      "پانزده",
+      "شانزده",
+      "هفده",
+      "هجده",
+      "نوزده",
+      "بیست",
+    ],
+    ["", "", "بیست", "سی", "چهل", "پنجاه", "شصت", "هفتاد", "هشتاد", "نود"],
+    [
+      "",
+      "یکصد",
+      "دویست",
+      "سیصد",
+      "چهارصد",
+      "پانصد",
+      "ششصد",
+      "هفتصد",
+      "هشتصد",
+      "نهصد",
+    ],
+    [
+      "",
+      " هزار",
+      " میلیون",
+      " میلیارد",
+      " بیلیون",
+      " بیلیارد",
+      " تریلیون",
+      " تریلیارد",
+      "کوآدریلیون",
+      " کادریلیارد",
+      " کوینتیلیون",
+      " کوانتینیارد",
+      " سکستیلیون",
+      " سکستیلیارد",
+      " سپتیلیون",
+      "سپتیلیارد",
+      " اکتیلیون",
+      " اکتیلیارد",
+      " نانیلیون",
+      " نانیلیارد",
+      " دسیلیون",
+      " دسیلیارد",
+    ],
+  ];
   const rialPart = +number.toString().charAt(number.toString().length - 1);
   const tomanPart = Math.floor(number / 10);
   let PrepareNumber = function PrepareNumber(num: string | number) {
@@ -198,4 +152,78 @@ export function toPersianLetterCurrency(
 
   if (rialPart > 0) Output.push(`${Letters[0][rialPart]} ریال `);
   return Output.join(Delimiter);
+}
+
+export function toPersianNumberic(number: number): string {
+  const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+
+  // Convert the number to a string for processing
+  const numberStr = number.toString();
+
+  // Extract the last digit as the 'rial' part
+  const rialPart = parseInt(numberStr.slice(-1));
+
+  // The rest of the number represents the 'toman' part
+  const tomanPart = parseInt(numberStr.slice(0, -1));
+
+  // Handle billions, millions, and thousands
+  const billions = Math.floor(tomanPart / 1000000000);
+  const remainingAfterBillions = tomanPart % 1000000000;
+
+  const millions = Math.floor(remainingAfterBillions / 1000000);
+  const remainingAfterMillions = remainingAfterBillions % 1000000;
+
+  const thousands = Math.floor(remainingAfterMillions / 1000);
+  const hundreds = remainingAfterMillions % 1000;
+
+  // Convert the numbers to Persian numerals
+  const persianBillions =
+    billions > 0
+      ? `${convertNumberToPersian(billions, persianDigits)} میلیارد`
+      : "";
+  const persianMillions =
+    millions > 0
+      ? `${convertNumberToPersian(millions, persianDigits)} میلیون`
+      : "";
+  const persianThousands =
+    thousands > 0
+      ? `${convertNumberToPersian(thousands, persianDigits)} هزار`
+      : "";
+  const persianHundreds =
+    hundreds > 0 ? convertNumberToPersian(hundreds, persianDigits) : "";
+  const persianRial = rialPart > 0 ? `${persianDigits[rialPart]} ریال` : "";
+
+  // Construct the final string
+  let result = "";
+  if (persianBillions) {
+    result += persianBillions;
+  }
+  if (persianMillions) {
+    if (result) result += " و ";
+    result += persianMillions;
+  }
+  if (persianThousands) {
+    if (result) result += " و ";
+    result += persianThousands;
+  }
+  if (persianHundreds) {
+    if (result) result += " و ";
+    result += `${persianHundreds} تومان`;
+  } else if (result) {
+    result += " تومان";
+  }
+
+  if (persianRial) {
+    result += ` و ${persianRial}`;
+  }
+
+  return result || "صفر تومان";
+}
+
+function convertNumberToPersian(number: number, persianDigits: string): string {
+  return number
+    .toString()
+    .split("")
+    .map((digit) => persianDigits[parseInt(digit)])
+    .join("");
 }

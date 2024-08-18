@@ -1,1 +1,1 @@
-export { toPersianLetterCurrency } from "./helpers";
+export { toPersianNumberic, toPersianAlphabetic } from "./helpers";

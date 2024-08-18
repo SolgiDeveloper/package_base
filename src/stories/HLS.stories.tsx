@@ -1,12 +1,15 @@
 import { Meta, Story } from "@storybook/react";
-import { toPersianLetterCurrency } from "../utils/helpers";
+import { toPersianAlphabetic, toPersianNumberic } from "../utils/helpers";
 
 type DemoProps = {
   length: number;
 };
 
 const Demo = ({ length }: DemoProps) => (
-  <p>{toPersianLetterCurrency(20000005)}</p>
+  <>
+    <p>{toPersianAlphabetic(20000005)}</p>
+    <p style={{ direction: "rtl" }}>{toPersianNumberic(20000005)}</p>
+  </>
 );
 
 const meta: Meta = {
