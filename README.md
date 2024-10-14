@@ -13,13 +13,13 @@
 
 ## Installation
 
-Install with [npm](https://www.npmjs.com/@hosseintaromi/video_player):
+Install with [npm](https://www.npmjs.com/package/to-persian-letter-currency):
 
 ```sh
 npm install to-persian-letter-currency
 ```
 
-Install with [yarn](https://yarnpkg.com/package?q=%40hosseintaromi&name=%40hosseintaromi%2Fvideo_player):
+Install with [yarn]():
 
 ```sh
 yarn add to-persian-letter-currency
@@ -36,7 +36,7 @@ const persianCurrency = toPersianAlphabetic(number);
 
 console.log(persianCurrency); // Output: دوازده هزار و سیصد و چهل و پنج تومان و شش ریال
 
-console.log(toPersianNumberic(234568999999)); // Output:  234 میلیارد و 568 میلیون و 999 هزار و 999 تومان و 9 ریال
+console.log(toPersianNumberic(234568999998)); // Output:  234 میلیارد و 568 میلیون و 999 هزار و 999 تومان و 8 ریال
 
 ```
 
