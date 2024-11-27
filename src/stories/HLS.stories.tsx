@@ -7,8 +7,9 @@ type DemoProps = {
 
 const Demo = ({ length }: DemoProps) => (
   <>
-    <p>{toPersianAlphabetic(20000005)}</p>
-    <p style={{ direction: "rtl" }}>{toPersianNumberic(200456456400005)}</p>
+    <p>{toPersianAlphabetic(5)}</p>
+    <p style={{ direction: "rtl" }}>{toPersianNumberic(2)}</p>
+    <p style={{ direction: "rtl" }}>{toPersianNumberic(53423)}</p>
   </>
 );
 
