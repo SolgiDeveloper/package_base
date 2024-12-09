@@ -10,6 +10,7 @@ const Demo = ({ length }: DemoProps) => (
     <p>{toPersianAlphabetic(5)}</p>
     <p style={{ direction: "rtl" }}>{toPersianNumberic(2)}</p>
     <p style={{ direction: "rtl" }}>{toPersianNumberic(53423)}</p>
+    <p style={{ direction: "rtl" }}>{toPersianNumberic(15000001)}</p>
   </>
 );
 

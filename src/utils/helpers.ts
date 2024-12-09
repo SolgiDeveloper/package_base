@@ -213,7 +213,7 @@ export function toPersianNumberic(number: number): string {
     result += " تومان";
   }
 
-  if (persianRial && !hundreds) {
+  if (persianRial && !hundreds && !thousands && !millions && !billions) {
     result += `${persianRial}`;
   } else if (persianRial) {
     result += ` و ${persianRial}`;
